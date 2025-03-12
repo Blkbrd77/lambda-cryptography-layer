@@ -3,12 +3,11 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
-    "runArgs": ["--init"],
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
     },
     "extensions": [],
     "forwardPorts": [],
-    "postCreateCommand": "sudo yum update -y && sudo yum install -y docker && sudo systemctl enable docker && sudo systemctl start docker",
+    "postCreateCommand": "yum update -y && yum install -y python3-pip zip",
     "remoteUser": "vscode"
 }
