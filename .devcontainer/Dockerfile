@@ -5,10 +5,8 @@ RUN yum update -y && \
     yum install -y python3 python3-pip zip && \
     yum clean all
 
-# Ensure the vscode user exists and set permissions
-RUN useradd -m -s /bin/bash vscode && \
-    mkdir -p /home/vscode && \
-    chown -R vscode:vscode /home/vscode
-
-USER vscode
+# Set working directory
 WORKDIR /home/vscode
+
+# Use the default Codespaces user (vscode)
+USER vscode
